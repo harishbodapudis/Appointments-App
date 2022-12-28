@@ -25,7 +25,7 @@ class Appointments extends Component {
     event.preventDefault()
     const {title, date} = this.state
 
-    if ((title, date)) {
+    if (title && date) {
       const newAppointment = {
         id: uuidv4(),
         title,
