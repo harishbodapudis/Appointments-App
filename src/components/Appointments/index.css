@@ -1,0 +1,104 @@
+/* Write your CSS here */
+
+.main-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 5px;
+  padding: 20px;
+  width: 900px;
+}
+.appointment-booking-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+.appointment-details-box {
+  border-top: 1px solid #b5b7c4;
+  width: 90%;
+  margin: auto;
+}
+.appointment-theme-img {
+  width: 350px;
+  height: 300px;
+}
+.date-input-box {
+  font-family: roboto;
+}
+
+.submit-btn {
+  margin-top: 25px;
+  background-color: #8b5cf6;
+  border-width: 0px;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 5px;
+  width: 60px;
+}
+
+.date-input-box {
+  width: 200px;
+  padding: 4px;
+}
+.input-title-box {
+  width: 200px;
+  padding: 4px;
+}
+
+.title {
+  color: #b5b7c4;
+  font-weight: bold;
+}
+.date {
+  color: #b5b7c4;
+  font-weight: bold;
+}
+.heading {
+  font-weight: 600;
+  color: #171f46;
+}
+
+.appointment-starred-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.starred-btn {
+  background-color: transparent;
+  border: 1px solid #9897f0;
+  border-radius: 12px;
+  color: #9796f0;
+  height: 25px;
+  font-size: 12px;
+}
+.appointments-name {
+  font-weight: bold;
+}
+
+.list-container {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.title-starred {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bg-star {
+  color: #ffffff;
+  background-color: #8b5cf6;
+}
+
+.title-box {
+  margin: 10px 0px;
+}
+
+.date-box {
+  margin: 10px 0px;
+}

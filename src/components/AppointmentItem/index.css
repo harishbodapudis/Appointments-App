@@ -1,0 +1,32 @@
+/* Write your CSS here */
+
+.appointments-list {
+  list-style-type: none;
+  width: 195px;
+  border: 1px solid#b5b7c4;
+  padding: 8px;
+  border-radius: 8px;
+  height: 80px;
+  margin: 5px;
+}
+
+.appointment-title {
+  color: #171f46;
+  font-size: 12px;
+}
+
+.date-data {
+  color: #b5b7c4;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.star-btn {
+  background-color: transparent;
+  border-width: 0px;
+  cursor: pointer;
+}
+.star-img {
+  width: 18px;
+  height: 18px;
+}
