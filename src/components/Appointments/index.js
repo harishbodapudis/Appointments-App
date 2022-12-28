@@ -58,7 +58,7 @@ class Appointments extends Component {
 
   render() {
     const {title, date, appointmentsList, status} = this.state
-
+    console.log('hello', title, date)
     const starredList = appointmentsList.filter(
       eachItem => eachItem.isStarred === status,
     )
