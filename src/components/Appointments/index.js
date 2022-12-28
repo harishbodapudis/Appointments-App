@@ -69,44 +69,38 @@ class Appointments extends Component {
         <div className="appointment-booking-box">
           <div>
             <h1 className="heading">Add Appointment</h1>
-            <form onSubmit={this.updateAppointmentList}>
-              <div className="title-box">
-                <label htmlFor="Title" className="title">
-                  Title
-                </label>
-                <br />
+            <form onSubmit={this.updateAppointmentList} className="form-box">
+              <label htmlFor="title" className="title">
+                Title
+              </label>
 
-                <input
-                  name="Title"
-                  type="text"
-                  placeholder="Title"
-                  className="input-title-box"
-                  value={title}
-                  onChange={this.updateTitle}
-                />
-              </div>
-              <div className="date-box">
-                <label htmlFor="Date" className="date">
-                  Date
-                </label>
-                <br />
+              <input
+                name="title"
+                type="text"
+                placeholder="Title"
+                className="input-title-box"
+                value={title}
+                onChange={this.updateTitle}
+              />
+              <br />
+              <label htmlFor="date" className="date">
+                Date
+              </label>
 
-                <input
-                  name="Date"
-                  type="date"
-                  className="date-input-box"
-                  value={date}
-                  onChange={this.updateDate}
-                />
-              </div>
-              <div>
-                <button type="submit" className="submit-btn">
-                  Add
-                </button>
-              </div>
+              <input
+                name="date"
+                type="date"
+                className="date-input-box"
+                value={date}
+                onChange={this.updateDate}
+              />
+
+              <button type="submit" className="submit-btn">
+                Add
+              </button>
             </form>
           </div>
-          <div>
+          <div className="appointments-img">
             <img
               src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
               alt="appointments"
