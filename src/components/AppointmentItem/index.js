@@ -14,20 +14,15 @@ const AppointmentItem = props => {
     ? 'https://assets.ccbp.in/frontend/react-js/appointments-app/filled-star-img.png'
     : 'https://assets.ccbp.in/frontend/react-js/appointments-app/star-img.png'
   return (
-    <li className="appointments-list">
+    <div className="appointments-data">
       <div className="title-starred">
         <p className="appointment-title">{title}</p>
-        <button
-          type="button"
-          className="star-btn"
-          onClick={updatedIsStarred}
-          testid="star"
-        >
+        <button type="button" className="star-btn" onClick={updatedIsStarred}>
           <img src={starredImg} alt="star" className="star-img" />
         </button>
       </div>
       <p className="date-data">Date: {date}</p>
-    </li>
+    </div>
   )
 }
 

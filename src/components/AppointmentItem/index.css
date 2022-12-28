@@ -1,7 +1,6 @@
 /* Write your CSS here */
 
-.appointments-list {
-  list-style-type: none;
+.appointments-data {
   width: 195px;
   border: 1px solid#b5b7c4;
   padding: 8px 8px 25px 8px;
@@ -28,9 +27,24 @@
   border-width: 0px;
   cursor: pointer;
   padding-bottom: 0px;
+  cursor: pointer;
 }
 .star-img {
   width: 16px;
   height: 16px;
   padding-bottom: 0px;
+}
+
+@media (width < 769px) {
+  .star-img {
+    width: 14px;
+    height: 14px;
+  }
+  .date-data {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .appointments-data {
+    width: 280px;
+  }
 }

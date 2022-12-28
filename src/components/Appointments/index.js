@@ -122,18 +122,22 @@ class Appointments extends Component {
           <ul className="list-container">
             {status
               ? starredList.map(eachItem => (
-                  <AppointmentItem
-                    key={eachItem.id}
-                    appointmentsList={eachItem}
-                    changeIsStarred={this.changeIsStarred}
-                  />
+                  <li className="list-item">
+                    <AppointmentItem
+                      key={eachItem.id}
+                      appointmentsList={eachItem}
+                      changeIsStarred={this.changeIsStarred}
+                    />
+                  </li>
                 ))
               : appointmentsList.map(eachItem => (
-                  <AppointmentItem
-                    key={eachItem.id}
-                    appointmentsList={eachItem}
-                    changeIsStarred={this.changeIsStarred}
-                  />
+                  <li className="list-item">
+                    <AppointmentItem
+                      key={eachItem.id}
+                      appointmentsList={eachItem}
+                      changeIsStarred={this.changeIsStarred}
+                    />
+                  </li>
                 ))}
           </ul>
         </div>
