@@ -14,7 +14,7 @@ const AppointmentItem = props => {
     ? 'https://assets.ccbp.in/frontend/react-js/appointments-app/filled-star-img.png'
     : 'https://assets.ccbp.in/frontend/react-js/appointments-app/star-img.png'
   return (
-    <li key={id} className="appointments-list">
+    <li className="appointments-list">
       <div className="title-starred">
         <p className="appointment-title">{title}</p>
         <button
