@@ -1,6 +1,7 @@
 /* Write your CSS here */
 
 .appointments-data {
+  list-style-type: none;
   width: 195px;
   border: 1px solid#b5b7c4;
   padding: 8px 8px 25px 8px;
