@@ -6,8 +6,6 @@ import './index.css'
 
 import {v4 as uuidv4} from 'uuid'
 
-import {format} from 'date-fns'
-
 import AppointmentItem from '../AppointmentItem'
 
 class Appointments extends Component {
@@ -18,7 +16,7 @@ class Appointments extends Component {
   }
 
   updateDate = event => {
-    this.setState({date: new Date(event.target.value)})
+    this.setState({date: event.target.value})
   }
 
   updateAppointmentList = event => {
@@ -29,7 +27,7 @@ class Appointments extends Component {
       const newAppointment = {
         id: uuidv4(),
         title,
-        date: format(date, 'dd MMMM yyyy, EEEE'),
+        date: new Date(date),
         isStarred: false,
       }
       this.setState(prevState => ({
@@ -37,7 +35,11 @@ class Appointments extends Component {
       }))
     }
 
-    this.setState({title: '', date: ''})
+    if (title && date) {
+      this.setState({title: '', date: '', status: false})
+    } else {
+      this.setState({title: '', date: ''})
+    }
   }
 
   changeIsStarred = id => {
@@ -61,10 +63,16 @@ class Appointments extends Component {
 
   render() {
     const {title, date, appointmentsList, status} = this.state
+    console.log(title, date)
+    let newList = []
+    if (status) {
+      newList = appointmentsList.filter(
+        eachItem => eachItem.isStarred === status,
+      )
+    } else {
+      newList = appointmentsList
+    }
 
-    const starredList = appointmentsList.filter(
-      eachItem => eachItem.isStarred === status,
-    )
     const bgColor = status ? 'bg-star' : ''
 
     return (
@@ -74,27 +82,27 @@ class Appointments extends Component {
             <h1 className="heading">Add Appointment</h1>
             <form onSubmit={this.updateAppointmentList} className="form-box">
               <label htmlFor="title" className="title">
-                Title
+                TITLE
               </label>
 
               <input
-                name="title"
+                id="title"
                 type="text"
+                value={title}
                 placeholder="Title"
                 className="input-title-box"
-                value={title}
                 onChange={this.updateTitle}
               />
               <br />
               <label htmlFor="date" className="date">
-                Date
+                DATE
               </label>
 
               <input
-                name="date"
+                id="date"
                 type="date"
-                className="date-input-box"
                 value={date}
+                className="date-input-box"
                 onChange={this.updateDate}
               />
 
@@ -123,21 +131,13 @@ class Appointments extends Component {
             </button>
           </div>
           <ul className="list-container">
-            {status
-              ? starredList.map(eachItem => (
-                  <AppointmentItem
-                    key={eachItem.id}
-                    appointmentsList={eachItem}
-                    changeIsStarred={this.changeIsStarred}
-                  />
-                ))
-              : appointmentsList.map(eachItem => (
-                  <AppointmentItem
-                    key={eachItem.id}
-                    appointmentsList={eachItem}
-                    changeIsStarred={this.changeIsStarred}
-                  />
-                ))}
+            {newList.map(eachItem => (
+              <AppointmentItem
+                key={eachItem.id}
+                appointmentsList={eachItem}
+                changeIsStarred={this.changeIsStarred}
+              />
+            ))}
           </ul>
         </div>
       </div>

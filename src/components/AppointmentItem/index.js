@@ -1,6 +1,7 @@
 // Write your code here
 
 import './index.css'
+import {format} from 'date-fns'
 
 const AppointmentItem = props => {
   const {appointmentsList, changeIsStarred} = props
@@ -17,16 +18,11 @@ const AppointmentItem = props => {
     <li className="appointments-data">
       <div className="title-starred">
         <p className="appointment-title">{title}</p>
-        <button
-          type="button"
-          className="star-btn"
-          onClick={updatedIsStarred}
-          testid="star"
-        >
+        <button type="button" className="star-btn" onClick={updatedIsStarred}>
           <img src={starredImg} alt="star" className="star-img" />
         </button>
       </div>
-      <p className="date-data">Date: {date}</p>
+      <p className="date-data">Date: {format(date, 'dd MMMM yyyy, EEEE')}</p>
     </li>
   )
 }
