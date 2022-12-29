@@ -41,15 +41,18 @@ class Appointments extends Component {
   }
 
   changeIsStarred = id => {
-    const {appointmentsList} = this.state
-    const newAppointmentsList = appointmentsList.map(eachItem => {
-      if (id === eachItem.id) {
-        return {...eachItem, isStarred: !eachItem.isStarred}
-      }
-      return {...eachItem}
-    })
+    const {appointmentsList, status} = this.state
 
-    this.setState({appointmentsList: newAppointmentsList})
+    if (!status) {
+      const newAppointmentsList = appointmentsList.map(eachItem => {
+        if (id === eachItem.id) {
+          return {...eachItem, isStarred: !eachItem.isStarred}
+        }
+        return {...eachItem}
+      })
+
+      this.setState({appointmentsList: newAppointmentsList})
+    }
   }
 
   changeToStarredAndUnStarredList = () => {
@@ -58,7 +61,7 @@ class Appointments extends Component {
 
   render() {
     const {title, date, appointmentsList, status} = this.state
-    console.log('hello', title, date)
+
     const starredList = appointmentsList.filter(
       eachItem => eachItem.isStarred === status,
     )
